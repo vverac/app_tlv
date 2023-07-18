@@ -1,0 +1,28 @@
+{% extends 'app_tlv/base.html' %} {% load static %} {% block titulo %} Te Lo
+Vendo {% endblock %} {% block contenido %}
+<h2>Nustros Productos</h2>
+
+<div
+  class="container mb-5"
+  style="display: flex; justify-content: space-between; flex-wrap: wrap"
+>
+  {%for producto in productos%}
+  <div class="producto" style="">
+    <h3>{{producto.name}}</h3>
+    <img
+      src="{{ producto.image.url }}"
+      alt="{{ producto.name }}"
+      style="width: 450px"
+    />
+    <p>valor:{{producto.price}}</p>
+    <p>descripcion:{{producto.description}}</p>
+    {% comment %} boton {% endcomment %}
+    <a href='{% url "Add" producto.id %}' class="btn btn-primary">
+      Agregar a lista de pedido
+    </a>
+  </div>
+  {%endfor%}
+</div>
+
+<div class="col-12 mt-5">{%include 'app_tlv/carrito.html'%}</div>
+{% endblock %}

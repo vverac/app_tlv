@@ -1,0 +1,35 @@
+<div class="alert alert-primary" rolo="alert">
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="row" colspan="3" class="text-center">
+          <h1>Tu pedido</h1>
+        </th>
+      </tr>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Cantidad</th>
+        <th scope="col">Precio</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% if request.session.carrito.items %}
+      {% for key, value in request.session.carrito.items %}
+      <tr>
+        <td>{{value.nombre}}</td>
+        <td>{{value.cantidad}}</td>
+        <td>{{value.acumulado}}</td>
+      </tr>
+      {% endfor %}
+      {% else %}
+      <tr>
+        <td colspan="3">
+          <div class="alert alert-danger text-center">Sin Productos</div>
+        </td>
+      </tr>
+      {% endif %}
+      </tr>
+    </tbody>
+  </table>
+  <hr />
+</div>

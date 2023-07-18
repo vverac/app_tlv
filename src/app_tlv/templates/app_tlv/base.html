@@ -10,22 +10,15 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
       integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="{% static 'assets/estilos.css' %}" />
+      crossorigin="anonymous"/>
+   
     <title>Mis instrumentos</title>
   </head>
 
   <body>
     <nav class="navbar navbar-ligth bg-ligth">
       <a href="landing.html" class="nabvar-brand">
-        <img
-          src="{% static 'assets/awakelab.png' %}"
-          width="30"
-          height="30"
-          class="d-inline-block align-top"
-          alt=""
-        />
+        
         {% block titulo %} Te lo Vendo {% endblock %}
       </a>
       <ul class="navbar-nav">
@@ -40,6 +33,9 @@
         {% else %} 
           <li class="nav-item">
             <a class="nav-link" href={% url 'login' %}>Login</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href={% url 'producto_detail' %}>Productos</a>
           </li>
         {% endif %}
 
@@ -56,7 +52,7 @@
           <div class="col-sm">
             <h3>Informacion de contacto</h3>
             <address>
-              <strong>Mis Inmuebles</strong><br />
+              <strong>Mis Instrumentos</strong><br />
               Calle Ficticia 123 <br />
               Ciudad, Region <br />
             </address>
